@@ -1,0 +1,198 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Hackathon Synergy Agent - Dark Neumorphic Theme
+   * Tailwind CSS theme with HSL values for dark glassmorphism design
+   */
+  :root {
+    /* Dark neumorphic background (#1a1a1a) */
+    --background: 0 0% 10.2%;
+    --foreground: 270 100% 95%;
+
+    /* Glassmorphic cards */
+    --card: 270 15% 15%;
+    --card-foreground: 270 100% 95%;
+
+    /* Popover */
+    --popover: 270 15% 18%;
+    --popover-foreground: 270 100% 95%;
+
+    /* Primary: Purple-indigo gradient base */
+    --primary: 270 85% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Accent purple */
+    --secondary: 260 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted: Subtle dark tones */
+    --muted: 270 10% 25%;
+    --muted-foreground: 270 50% 70%;
+
+    /* Accent: Neon cyan glow */
+    --accent: 200 100% 60%;
+    --accent-foreground: 0 0% 10%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Border: Subtle with glassmorphism */
+    --border: 270 20% 25%;
+    --input: 270 15% 20%;
+    --ring: 270 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar (for extension UI) */
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 270 100% 95%;
+    --sidebar-primary: 270 85% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 100% 60%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 270 20% 25%;
+    --sidebar-ring: 270 100% 60%;
+
+    /* Neon glow for text effects */
+    --neon-purple: 270 100% 60%;
+    --neon-cyan: 200 100% 60%;
+    --neon-pink: 330 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-attachment: fixed;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  /* Neon glow text effect */
+  .neon-glow {
+    text-shadow: 0 0 10px rgba(102, 126, 234, 0.8),
+                 0 0 20px rgba(102, 126, 234, 0.6),
+                 0 0 30px rgba(102, 126, 234, 0.4);
+  }
+
+  /* Glassmorphism effect */
+  .glassmorphism {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Neumorphic shadow */
+  .neumorphic-shadow {
+    box-shadow: 8px 8px 16px #0a0a0a, -8px -8px 16px #2a2a2a;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gradient button base */
+  .gradient-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gradient-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+  }
+
+  .gradient-button:active {
+    transform: scale(0.98);
+  }
+
+  /* Animated gradient background */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .gradient-animate {
+    background-size: 200% 200%;
+    animation: gradient-shift 6s ease infinite;
+  }
+
+  /* Pulsing glow animation */
+  @keyframes glow-pulse {
+    0%, 100% {
+      text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+      box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(102, 126, 234, 0.8);
+      box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
+    }
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* Typing animation */
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .typewriter {
+    animation: typewriter 3s steps(40, end);
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid hsl(var(--primary));
+  }
+}

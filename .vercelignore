@@ -1,0 +1,26 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs (Vercel will build these)
+dist
+.vercel
+
+# Development files
+.vscode
+.idea
+*.log
+*.local
+
+# Extension (not needed for web deployment)
+extension/
+
+# Test files
+*.spec.ts
+*.test.ts
+__tests__
+
+# Config files (keep these)
+# package.json
+# pnpm-lock.yaml
+# tsconfig.json

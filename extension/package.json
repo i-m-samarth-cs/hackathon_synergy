@@ -1,0 +1,79 @@
+{
+  "name": "hackathon-synergy",
+  "displayName": "Hackathon Synergy Agent",
+  "description": "AI-powered hackathon project matching using Algolia Agent Studio. Detect your tech stack and find the perfect project match in seconds.",
+  "version": "0.1.0",
+  "publisher": "builder-io",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "AI",
+    "Productivity",
+    "Other"
+  ],
+  "keywords": [
+    "hackathon",
+    "ai",
+    "project-matching",
+    "algolia",
+    "agent"
+  ],
+  "icon": "resources/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/builder-io/hackathon-synergy"
+  },
+  "activationEvents": [
+    "onCommand:hackathon-synergy.generate"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hackathon-synergy.generate",
+        "title": "Hackathon Synergy: Generate Project Match",
+        "category": "Hackathon Synergy"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "hackathon-synergy.generate",
+        "key": "ctrl+shift+h",
+        "mac": "cmd+shift+h",
+        "when": "editorFocus || !editorFocus"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "hackathon-synergy.generate",
+          "when": "true"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "hackathon-synergy.generate",
+          "group": "1_modification",
+          "when": "editorFocus"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run build && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.75.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
