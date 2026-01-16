@@ -436,8 +436,6 @@ MIT © Builder.io
 
 ## Credits
 
-Built with ❤️ for the global hackathon community 🌍
-
 - 🎨 Design: Dark neumorphic + glassmorphism principles
 - 🤖 AI: Powered by Algolia Agent Studio
 - 💻 Tech: React, Express, VSCode SDK
@@ -450,18 +448,3 @@ Built with ❤️ for the global hackathon community 🌍
 - [Tailwind CSS](https://tailwindcss.com)
 - [React Router](https://reactrouter.com)
 - [Express.js](https://expressjs.com)
-
-## Support
-
-- 📧 Email: support@builder.io
-- 💬 Discord: [Join Community](https://discord.gg/builder)
-- 🐛 Issues: [GitHub Issues](https://github.com/builder-io/hackathon-synergy/issues)
-- 📖 Docs: [Documentation](https://www.builder.io/c/docs)
-
----
-
-**Status**: ✅ Production Ready
-
-**Version**: 0.1.0
-
-**Last Updated**: 2024
